@@ -23,5 +23,17 @@ services:
       - db_data_lab_loker:/var/lib/mysql
       - ./lab_loker.sql:/docker-entrypoint-initdb.d/database.sql:ro
 
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin_lab_loker
+    environment:
+      PMA_HOST: db_lab_loker
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "9004:80"
+    depends_on:
+      - db_lab_loker
+
+
 volumes:
   db_data_lab_loker:
