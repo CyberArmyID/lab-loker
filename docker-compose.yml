@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lab_lab_loker
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "8004:80"
+    depends_on:
+      - db_lab_loker
+
+  db_lab_loker:
+    image: mysql:8.0
+    container_name: mysql_db_lab_loker
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: lab_loker
+    volumes:
+      - db_data_lab_loker:/var/lib/mysql
+      - ./lab_loker.sql:/docker-entrypoint-initdb.d/database.sql:ro
+
+volumes:
+  db_data_lab_loker:
