@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /
+
+# Jika file atau direktori ada, jangan rewrite
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite URL apapun tanpa ekstensi .php ke file PHP yang sesuai
+RewriteRule ^([a-zA-Z0-9_-]+)$ /$1.php [L]
