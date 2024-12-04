@@ -64,7 +64,7 @@ include "../../functions/member/cv/getData.php";
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <p><?php echo htmlspecialchars_decode($user['about']) ?? '-';?></p>
+                                <p><?php echo @htmlspecialchars_decode($user['about']) ?? '-';?></p>
                                 <a href="<?php echo $menuProfileEditBio;?>" class="btn btn-outline-primary btn-block"><b>Update Bio</b></a>
 
                             </div>

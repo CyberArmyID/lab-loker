@@ -1,7 +1,7 @@
 <?php
 include "../../init.php";
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    header('Location: '.$menuAuth.'/login.php');
+    echo "<script>window.location.href = '{$menuAuth}/login.php';</script>";
     exit;
 }
 
@@ -22,8 +22,8 @@ if($result->num_rows > 0){
 $getUser = "SELECT * from users where phone_number='$phoneNumber'";
 $resultQueryGetUser = $conn->query($getUser);
 if($resultQueryGetUser->num_rows == 0){
-    header('Location: login');
-    exit();
+    echo "<script>window.location.href = '{$menuAuth}/login.php';</script>";
+    exit;
 }
 $user = $resultQueryGetUser->fetch_assoc();
 //generate session login
@@ -36,5 +36,5 @@ $conn->query($sql);
 
 $conn->close();
 
-header('Location: '.$menuProfile.'/profile/index.php');
-exit();
+echo "<script>window.location.href = '{$menuProfile}/profile/index.php';</script>";
+exit;

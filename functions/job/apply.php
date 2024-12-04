@@ -9,7 +9,9 @@ $result = $conn->query($query);
 
 if ($result->num_rows > 0) {
         $_SESSION['error_message'] .= "Kamu sudah melamar ke Lowongan ini";
-        header("location: ".$menuJob);
+    echo "<script>window.location.href = '{$menuJob}';</script>";
+    exit;
+
 } else {
     // Data tidak ditemukan, lakukan insert
     $insert_query = "INSERT INTO user_jobs (user_id, job_id, status) VALUES ($userID, $jobID,1)";
@@ -19,8 +21,8 @@ if ($result->num_rows > 0) {
         $_SESSION['error_message'] .= "Error inserting record: " . $conn->error;
     }
 }
-
-header("location: ".$menuHistory);
+echo "<script>window.location.href = '{$menuHistory}';</script>";
 exit;
+
 ?>
 

@@ -1,8 +1,7 @@
 <?php
 include "../../init.php";
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-
-    header('Location: '.$menuAuth.'/login.php');
+    echo "<script>window.location.href = '{$menuAuth}/login.php';</script>";
     exit;
 }
 $phoneNumber = $_POST['phoneNumber'];
@@ -19,13 +18,13 @@ if ($result->num_rows == 0) {
         echo "Nomor handphone berhasil ditambahkan!";
     } else {
         $_SESSION['error_message'] = "Error: " . $queryInsert . "<br>" . $conn->error;
-        header('Location: '.$menuAuth.'/login.php');
-        exit();
+        echo "<script>window.location.href = '{$menuAuth}/login.php';</script>";
+        exit;
     }
 } else {
     echo "Nomor handphone sudah terdaftar.";
 }
 
 $_SESSION['phone_number'] = $phoneNumber;
-header('Location: '.$menuAuth.'/otp.php');
-exit();
+echo "<script>window.location.href = '{$menuAuth}/otp.php';</script>";
+exit;

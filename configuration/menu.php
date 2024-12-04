@@ -33,5 +33,3 @@ $menuAdminDetailApplicant = $menuAdminApplicant.'/detail.php';
 
 $functionAdminLogin = $menuAdmin.'/functions/auth/login.php';
 ?>
-
-

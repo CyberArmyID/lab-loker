@@ -7,8 +7,8 @@ $getUser = "SELECT users.* FROM users
             WHERE user_access_tokens.token='$accessToken'";
 $result = $conn->query($getUser);
 if ($result->num_rows == 0) {
-    header('Location: '.$host);
-    exit();
+    echo "<script>window.location.href = '{$menuAuth}/login.php';</script>";
+    exit;
 }
 $user = $result->fetch_assoc();
 $userID = $user['id'];

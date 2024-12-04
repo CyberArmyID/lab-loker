@@ -1,8 +1,8 @@
 <?php
 
 if(!$_SESSION['phone_number']){
-    header('Location: '.$menuAuth.'/login.php');
-    exit();
+    echo "<script>window.location.href = '{$menuAuth}/login.php';</script>";
+    exit;
 }
 $phoneNumber = $_SESSION['phone_number'];
 

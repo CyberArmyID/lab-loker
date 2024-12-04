@@ -2,8 +2,9 @@
 include "../../../init.php";
 include "../getUser.php";
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    header('Location: '.$menuProfile.'/profile');
+    echo "<script>window.location.href = '{$menuProfile}/profile';</script>";
     exit;
+
 }
 
 
