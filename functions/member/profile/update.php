@@ -26,7 +26,7 @@ if ($fileName) {
     $fileType = $_FILES["avatar"]["type"];
 
     // Ambil ekstensi file
-    $fileExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+    $fileExt = pathinfo($fileName, PATHINFO_EXTENSION);
 
     // Daftar ekstensi file yang tidak diizinkan
     $disallowedExts = ['php', 'zip'];

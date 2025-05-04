@@ -121,7 +121,7 @@ CREATE TABLE `jobs` (
 
 LOCK TABLES `jobs` WRITE;
 /*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
-INSERT INTO `jobs` VALUES (1,'Backend Developer','Dibutuhkan Backend Developer yang terbiasa dengan bahasa pemrograman JAVA','fulltime','2024-12-30',NULL,'Jakarta'),(2,'Frontend Developer','Dibutuhkan Front Developer yang terbiasa dengan bahasa pemrograman React','fulltime','2024-12-30',NULL,'Jakarta'),(3,'DevOps','Dibutuhkan DevOps yang terbiasa menggunakan Github Action, Jenkins','parttime','2024-10-10',NULL,'-');
+INSERT INTO `jobs` VALUES (1,'Backend Developer','Dibutuhkan Backend Developer yang terbiasa dengan bahasa pemrograman JAVA','fulltime','2025-12-30',NULL,'Jakarta'),(2,'Frontend Developer','Dibutuhkan Front Developer yang terbiasa dengan bahasa pemrograman React','fulltime','2025-12-30',NULL,'Jakarta'),(3,'DevOps','Dibutuhkan DevOps yang terbiasa menggunakan Github Action, Jenkins','parttime','2025-04-10',NULL,'-');
 /*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
 UNLOCK TABLES;
 

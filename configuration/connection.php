@@ -3,7 +3,7 @@ $servername = "mysql_db_lab_loker"; // Ganti dengan server database Anda jika pe
 $username = "root"; // Ganti dengan username database Anda
 $password = "root"; // Ganti dengan password database Anda
 $dbname = "lab_loker"; // Nama database yang dibuat sebelumnya
-$host  = 'http://217.15.163.197:8004';
+$host  = 'http://127.0.0.1:8004';
 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
